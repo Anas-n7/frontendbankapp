@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+    <div class="container mt-5">
+      <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4 bg-light mt-5 rounded-5 bg">
+                  <img src="./images/st.png" style="height: 60px;" class="mt-5" alt="">
+                  <form action="" class="p-5">
+                    <h2>{{aim}}</h2>
+                      <input (change)="acnoChange($event)" type="text"  id="accno" class="form-control mt-3" [placeholder]="account">
+                      <input (change)="pswdChange($event)" type="password"  id="pswd" class="form-control mt-3" placeholder="Password">
+                  </form>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn" type="button" (click)="logIn()">Login</button>
+          
+                  </div>
+                  <br>
+                  <p style="color: rgb(156, 156, 156);" class="mb-5">Don't have an Account?<a routerLink="register" id="link1"><span> <b>Sign Up</b> </span></a></p>
+                      
+                  </div>
+                  </div>  
+          <div class="col-4"></div>
+      </div>
+    </div>

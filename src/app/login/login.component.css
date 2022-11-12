@@ -1,0 +1,46 @@
+.bg{
+    background-image: url(./../../assets/image/bankz.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 20px 20px 100px 2px;
+}
+
+#link1{
+    text-decoration: none;
+    font-weight: 400;
+    color: #F3E8EE;
+
+}
+.btn{
+    background-color: rgb(71,0,78);
+    color: white;
+    margin-top: 10%;
+}
+.btn:hover{
+    background-color: #CDD1C4;
+    color: rgb(71,0,78); 
+}
+
+.form-control:hover{
+    border: 1px solid  #733DE1;
+
+}
+.form-control:focus{
+    outline: 2px solid  #733DE1;
+}
+
+.form-control.visited{
+    outline: 2px solid  #733DE1;
+}
+#head{
+    font-size:large;
+    padding-top: 290px;
+    padding-right: 300px;
+}
+body{
+    background-color: #CDD1C4;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
