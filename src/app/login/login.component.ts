@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +16,7 @@ export class LoginComponent implements OnInit { //3rd execcution
 
   acno="";  //properties
   pswd="";
-  userDetails:any ={  //object of object
-    1000:{acno:1000,username:'Anas',password:1000,balance:10000},
-    1001:{acno:1001,username:'Ali',password:1001,balance:10000},
-    1002:{acno:1002,username:'Ronaldo',password:1002,balance:10000}
-  }
-  constructor() { } //1st execution
+  constructor(private router:Router,private ds:DataService) { } //1st execution //dependency injection
 
   ngOnInit(): void { //2nd execution - it is a life cycle hooks of angular
     //initial process of component
@@ -27,33 +24,51 @@ export class LoginComponent implements OnInit { //3rd execcution
 
   //userdefined functions //4th execution
 
-  acnoChange(event:any){
-    this.acno=(event.target.value);
-    console.log(this.acno);
-  }
+  // acnoChange(event:any){
+  //   this.acno=(event.target.value);
+  //   console.log(this.acno);
+  // }
 
-  pswdChange(event:any){
-    this.pswd=(event.target.value);
-    console.log(this.pswd);
-  }
+  // pswdChange(event:any){
+  //   this.pswd=(event.target.value);
+  //   console.log(this.pswd);
+  // }
 
   logIn(){
     //alert("login clicked");
 
     var acno=this.acno;
     var pswd=this.pswd;
-    var userDetails=this.userDetails;
 
-    if(acno in this.userDetails){
-      if(pswd==userDetails[acno]['password']){
-        alert('login success')
-      }else{
-        alert('incorrect password')
-      }
-
-    }
-    else{
-      alert('User not found')
-    }
+    const result=this.ds.login(acno,pswd);
+    if(result){
+     alert("login successfull");
+     this.router.navigateByUrl('dashboard');
   }
+  else{
+    alert("login failed");
+  }
+
+  }
+//  logIn(a:any,p:any){
+//   //alert("login clicked");
+
+//   var acno=a.value;
+//   var pswd=p.value;
+//   var userDetails=this.userDetails;
+
+//   if(acno in this.userDetails){
+//     if(pswd==userDetails[acno]['password']){
+//       alert('login success')
+//     }else{
+//       alert('incorrect password')
+//     }
+
+//   }
+//   else{
+//     alert('User not found')
+//   }
+// }
 }
+
+

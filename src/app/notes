@@ -15,4 +15,45 @@ types-
    1.2) view to component (html ->view)
 
     a) Event binding - (event_name) = "function_name()"
-    b) a)Event binding using $event - (event_name) = "function_name($event)"
+    b) Event binding using $event - (event_name) = "function_name($event)"
+    c) Event binding using template referencing variable - #variable_name
+
+  2)Two way binding
+  [(ngModel)]="property"  
+
+  Angular Routing - To set path for a component
+
+  {
+    path:value,component:class_name
+  }
+
+
+Dependecy Injection
+--------------------
+To share data between two dependent classes
+
+Angular Services
+-----------------
+
+ng g s Service_name
+
+Angular Directives
+-------------------
+- To manipulate DOM elements
+a) Component Directives
+b) Structural Directives
+  1) ngFor
+
+
+
+
+
+Angular Forms
+--------------
+a)Template Driven Forms
+
+b)Model Driven Forms -adv validations 
+    1)Reactive Forms
+    formGroup,array,control
+         -add validations
+         -import Reactive Form Modules

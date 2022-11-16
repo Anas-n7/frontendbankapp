@@ -5,20 +5,20 @@
             <div class="row">
             <div class="col-6 mt-5">
                <img src="./banks.webp" alt="" height="60px">
-                <form action="" class="p-3">
-                    <input type="text"  id="uname" class="form-control mt-3" placeholder="Username">
-                    <input type="text"  id="accno" class="form-control mt-3" placeholder="Account Number">
-                    <input type="password" id="psswd" class="form-control mt-3" placeholder="Password">
-                </form>
+ <form [formGroup]="registerForm" class="p-3 mt-3">
+                    <input formControlName="uname" type="text"  id="uname" class="form-control mt-3" placeholder="Username">
+                    <input formControlName="acno" type="text"  id="acno" class="form-control mt-3" placeholder="Account Number">
+                    <input formControlName="pswd" type="password" id="pswd" class="form-control mt-3" placeholder="Password">
+         
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn shadow mt-4" type="button" onclick="signUp()">Register</button>
+                    <button class="btn shadow mt-4" type="button" (click)="register()">Register</button>
         
                 </div>
                 <h1></h1>
-    
+ </form>
                 
                 <br>
-                <p style="color: rgb(156, 156, 156);">Don't have an Account?<a href="./index.html" id="signin"><span> <b>Sign Up</b> </span></a></p>
+                <p style="color: rgb(156, 156, 156);">Don't have an Account?<a href="./index.html" id="signin"><span> <b>Sign In</b> </span></a></p>
                 <br>
             </div>        
             <div class="col-6 bg1">
